@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+
+    <section>
+
+        <p id="timer">
+            <div></div>
+            <div id="years"></div>
+            <div id="days"></div>
+            <div id="hours"></div>
+            <div id="min"></div>
+            <div id="sec"></div>
+        </p>
+
+    </section>
+
+
+
+
+    <script>
+        setInterval('updateTimer()', 1000);
+
+
+
+
+
+        function updateTimer() {
+            future = Date.parse("1, march, 2024 20:30:00");
+            now = new Date();
+            diff = future - now;
+
+            years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365));
+            days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            hours = Math.floor(diff / (1000 * 60 * 60));
+            mins = Math.floor(diff / (1000 * 60));
+            secs = Math.floor(diff / 1000);
+
+            y = years;
+            d = days - years * 365;
+            h = hours - days * 24;
+            m = mins - hours * 60;
+            s = secs - mins * 60;
+
+            document.getElementById("years").innerHTML = y + " " + "years";
+            document.getElementById("days").innerHTML = d + " " + "Days";
+            document.getElementById("hours").innerHTML = h + " " + "Hours";
+            document.getElementById("min").innerHTML = m + " " + "Minea";
+            document.getElementById("sec").innerHTML = s + " " + "Cecs";
+
+        }
+    </script>
+
+</body>
+
+</html>
